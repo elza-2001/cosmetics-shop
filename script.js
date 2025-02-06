@@ -178,7 +178,7 @@ function applySearch() {
     const searchText = searchInput.value.toLowerCase().trim();
 
     currentItems = items.filter((el) =>
-        el.title.toLowerCase().trim().includes(searchText);
+        el.title.toLowerCase().trim().includes(searchText)
     );
 
     currentItems.sort((a, b) => sortByAlphabet(a, b));
