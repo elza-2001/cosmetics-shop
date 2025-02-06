@@ -107,7 +107,7 @@ function createItemCard(shopItem) {
     tags.forEach((tag) => {
         const element = document.createElement('span');
         element.textContent = tag;
-        element.classList.add('tag')
+        element.classList.add('tag');
         tagsHolder.append(element);
     });
 
@@ -126,7 +126,7 @@ function usedItems(arr) {
     });
 
     if(!arr.length) {
-        nothingFound.textContent = 'Ничего не найдено'
+        nothingFound.textContent = 'Ничего не найдено';
     };
 };
 
@@ -177,14 +177,14 @@ const searchButton = document.querySelector('#search-btn');
 function applySearch() {
     const searchText = searchInput.value.toLowerCase().trim();
 
-    const needfulItems = items.filter((el) =>
+    currentItems = items.filter((el) =>
         el.title.toLowerCase().trim().includes(searchText)
     );
 
-    needfulItems.sort((a, b) => sortByAlphabet(a, b));
+    currentItems.sort((a, b) => sortByAlphabet(a, b));
     sortControl.selectedIndex = 0;
 
-    usedItems(needfulItems);
+    usedItems(currentItems);
 }
 
 searchButton.addEventListener("click", applySearch);
