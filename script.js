@@ -67,7 +67,7 @@ const items = [
         tags: [],
         price: 1180,
         img: "./img/serum.jpeg",
-        rating: 4.2,
+        rating: 4.0,
     },
     {
         title: "Пудра для создания объема волос",
@@ -178,7 +178,7 @@ function applySearch() {
     const searchText = searchInput.value.toLowerCase().trim();
 
     currentItems = items.filter((el) =>
-        el.title.toLowerCase().trim().includes(searchText)
+        el.title.toLowerCase().trim().includes(searchText);
     );
 
     currentItems.sort((a, b) => sortByAlphabet(a, b));
